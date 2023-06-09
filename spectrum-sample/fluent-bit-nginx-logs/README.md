@@ -13,7 +13,7 @@ redshift-spectrum.sql: Redshift Spectrum外表创建示例
 
 * `推荐` 给EC2配置一个角色https://repost.aws/zh-Hans/knowledge-center/ec2-instance-access-s3-bucket
 * 在操作系统配置ak、sk https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html#cli-configure-files-methods
-* `适用于跨账号、采集IDC服务器` 在fluent-bit service配置文件写入ak、sk环境变量
+* `适用于跨账号、采集IDC服务器` 在fluent-bit service配置文件写入ak、sk环境变量。修改完之后需要运行命令`sudo systemctl daemon-reload`重新加载配置。
 ```shell
 [Unit]
 Description=Fluent Bit
