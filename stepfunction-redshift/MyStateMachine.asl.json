@@ -7,7 +7,7 @@
       "Next": "create_table",
       "Result": {
         "input": {
-          "redshift_cluster_id": "redshiftcluster-kc0irhbe2ww6",
+          "redshift_cluster_id": "redshiftcluster-rtezs0c3fpvx",
           "redshift_database": "dev",
           "redshift_user": "awsuser",
           "redshift_schema": "public",
@@ -34,7 +34,7 @@
       "Resource": "arn:aws:states:::lambda:invoke",
       "Parameters": {
         "Payload.$": "$",
-        "FunctionName": "arn:aws:lambda:ap-northeast-1:1234567890123:function:StepFunctionsSample-RedshiftETLec8-RedshiftDataApi-ljm1F0Aetq5V:$LATEST"
+        "FunctionName": "arn:aws:lambda:ap-northeast-1:1234567890123:function:StepFunctionsSample-RedshiftETL661-RedshiftDataApi-u91ZH1i9NUbP:$LATEST"
       },
       "Retry": [
         {
@@ -56,7 +56,7 @@
       "Next": "copy_data",
       "Result": {
         "input": {
-          "redshift_cluster_id": "redshiftcluster-kc0irhbe2ww6",
+          "redshift_cluster_id": "redshiftcluster-rtezs0c3fpvx",
           "redshift_database": "dev",
           "redshift_user": "awsuser",
           "redshift_schema": "public",
@@ -72,7 +72,7 @@
       "Resource": "arn:aws:states:::lambda:invoke",
       "Parameters": {
         "Payload.$": "$",
-        "FunctionName": "arn:aws:lambda:ap-northeast-1:1234567890123:function:StepFunctionsSample-RedshiftETLec8-RedshiftDataApi-ljm1F0Aetq5V:$LATEST"
+        "FunctionName": "arn:aws:lambda:ap-northeast-1:1234567890123:function:StepFunctionsSample-RedshiftETL661-RedshiftDataApi-u91ZH1i9NUbP:$LATEST"
       },
       "Retry": [
         {
@@ -95,7 +95,7 @@
       "Resource": "arn:aws:states:::lambda:invoke",
       "Parameters": {
         "Payload.$": "$",
-        "FunctionName": "arn:aws:lambda:ap-northeast-1:1234567890123:function:StepFunctionsSample-RedshiftETLec8-RedshiftDataApi-ljm1F0Aetq5V:$LATEST"
+        "FunctionName": "arn:aws:lambda:ap-northeast-1:1234567890123:function:StepFunctionsSample-RedshiftETL661-RedshiftDataApi-u91ZH1i9NUbP:$LATEST"
       },
       "Retry": [
         {
@@ -117,12 +117,12 @@
       "Type": "Choice",
       "Choices": [
         {
-          "Variable": "$.status",
+          "Variable": "$.status.Payload",
           "StringEquals": "FAILED",
           "Next": "Fail"
         },
         {
-          "Variable": "$.status",
+          "Variable": "$.status.Payload",
           "StringEquals": "FINISHED",
           "Next": "Success"
         }
