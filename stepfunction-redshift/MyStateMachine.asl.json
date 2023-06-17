@@ -13,7 +13,6 @@
           "redshift_schema": "public",
           "action": "create_table",
           "sql_statement": [
-            "drop table if exists customer;",
             "create table customer (",
             "c_custkey int8 not null ,",
             "c_name varchar(25) not null,",

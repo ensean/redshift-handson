@@ -24,4 +24,7 @@
 * Lambda权限问题：确保Lambda函数对应的角色有权限获取Redshift集群的临时凭证（简单方式可给该角色添加RedshiftFullAccess策略）
 * StateMachine权限：确保StateMachine角色可以调用Lambda函数（简单方式可给该角色添加AWSLambda_FullAccess策略）
 ### 参考资料
-https://docs.aws.amazon.com/step-functions/latest/dg/sample-etl-orchestration.html
+1. https://docs.aws.amazon.com/step-functions/latest/dg/sample-etl-orchestration.html
+2. Redshift data api, [execute_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data/client/execute_statement.html) 
+3. Redshift data api, [describe_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data/client/describe_statement.html)
+4. Redshift data api, [get_statement_result](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data/client/get_statement_result.html)
