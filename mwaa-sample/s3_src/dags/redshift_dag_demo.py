@@ -10,17 +10,17 @@ with DAG(
     catchup=False,
     tags=['example_01'],
 ) as dag:
-setup__task_create_table = PostgresOperator(postgres_conn_id=redshift_conn_id,
-                                            task_id='setup__create_table',
-                                            sql=create_fruit_tb,
-                                            )
-task_insert_data = PostgresOperator(
-    postgres_conn_id=redshift_conn_id,
-    task_id='task_insert_data',
-    sql=insert_data,
-)
-task_get_all_table_data = PostgresOperator(
-    postgres_conn_id=redshift_conn_id,
-    task_id='task_get_all_table_data', sql=create_more_fruit_from_fruit
-)
-setup__task_create_table >> task_insert_data >> task_get_all_table_data
+    setup__task_create_table = PostgresOperator(postgres_conn_id=redshift_conn_id,
+                                                task_id='setup__create_table',
+                                                sql=create_fruit_tb,
+                                                )
+    task_insert_data = PostgresOperator(
+        postgres_conn_id=redshift_conn_id,
+        task_id='task_insert_data',
+        sql=insert_data,
+    )
+    task_get_all_table_data = PostgresOperator(
+        postgres_conn_id=redshift_conn_id,
+        task_id='task_get_all_table_data', sql=create_more_fruit_from_fruit
+    )
+    setup__task_create_table >> task_insert_data >> task_get_all_table_data
