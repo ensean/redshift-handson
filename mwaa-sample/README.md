@@ -43,3 +43,11 @@ scripts/                            # 启动脚本
 3. 如图所示配置Redshift连接（确保MWAA能够访问Redshift，为简便展示本示例通过互联网访问Redshift，即Redshift开启公网访问）
 ![](./imgs/2023-06-19-00-04-57.png)
 ![](./imgs/2023-06-19-00-06-32.png)
+
+### 示例任务
+
+```
+s3_src/dags/redshift_dag_demo.py        # airflow 任务定义
+s3_src/dags/sql/common.py               # airflow 任务中使用的sql
+s3_src/requirements/requirements.txt    # 依赖文件
+```
