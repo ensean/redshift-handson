@@ -1,4 +1,19 @@
 
+### MWAA配置文件说明
+
+MWAA配置文件存放在S3存储桶，典型目录结构如下：
+
+```
+dags                                # 存放dag python文件
+dags/sql/                           # 存放dag 引用的sql
+requirements/requirements.txt       # AirFlow依赖文件
+plugins/                            # 插件
+scripts/                            # 启动脚本
+```
+
+
+### MWAA集群创建
+
 1. 设置集群名称、版本
 ![](./imgs/2023-06-18-22-34-38.png)
 
