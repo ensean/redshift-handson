@@ -34,6 +34,17 @@ scripts/                            # 启动脚本
 ![](./imgs/2023-06-18-22-38-52.png)
 
 
+### 更新 MWAA 环境
+
+* 更新依赖
+更新requirements.txt文件，上传至S3桶，然后更新MWAA环境
+
+
+* 更新AirFlow配置项，填入Key及Value
+![](./imgs/2023-06-19-23-47-58.png)
+完整配置项查看[这里](https://airflow.apache.org/docs/apache-airflow/2.5.2/configurations-ref.html#)
+
+
 ### Redshift连接配置
 
 1. 在AirFlow控制台点击`Open Airflow UI`等待登录
