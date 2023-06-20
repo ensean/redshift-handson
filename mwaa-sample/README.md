@@ -63,3 +63,7 @@ s3_src/dags/redshift_dag_demo.py        # airflow 任务定义
 s3_src/dags/sql/common.py               # airflow 任务中使用的sql
 s3_src/requirements/requirements.txt    # 依赖文件
 ```
+
+### Airflow 文件 CI/CD配置示例
+
+参考[这里](./mwaa-cd.md)
