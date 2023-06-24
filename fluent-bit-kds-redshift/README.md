@@ -34,6 +34,14 @@ stream_ingestion.sql: Redshift示例sql
 参考stream_ingestion.sql内容
 ```
 
+#### Kafka INPUT  JSON数据处理
+
+* 背景：Kafka INPUT 不能正确处理JSON格式数据，目前[PR](https://github.com/fluent/fluent-bit/pull/7492)暂未关闭
+
+* 临时解决方式
+    1. clone 上述 PR中的代码，并根据官方文档进行编译，编译成功后使用`build/bin/fluent-bit`文件替换`/opt/fluent-bit/bin/fluent-bit`
+    2. 参考`fluent-bit-kafka.conf`更新配置文件，主要改动为添加如下配置项`data_format json`(指定消息格式为json)、`rdkafka.auto.offset.reset earliest`(读取所有消息)
+
 ### 参考资料
 * Redshift stream ingestion https://aws.amazon.com/cn/redshift/redshift-streaming-ingestion/
 * Kinesis data streams https://aws.amazon.com/cn/kinesis/data-streams/?nc1=h_ls
