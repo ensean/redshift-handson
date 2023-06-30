@@ -42,6 +42,15 @@ stream_ingestion.sql: Redshift示例sql
     1. clone 上述 PR中的代码，并根据官方文档进行编译，编译成功后使用`build/bin/fluent-bit`文件替换`/opt/fluent-bit/bin/fluent-bit`
     2. 参考`fluent-bit-kafka.conf`更新配置文件，主要改动为添加如下配置项`data_format json`(指定消息格式为json)、`rdkafka.auto.offset.reset earliest`(读取所有消息)
 
+#### 辅助的内部视图
+
+* 查询stream ingestion 刷新状态
+
+```sql
+select getdate(), starttime, endtime, datediff(seconds, starttime, endtime) as duration, status, refresh_type from SVL_MV_REFRESH_STATUS where mv_name='xxxxx' order by starttime desc limit 10;
+```
+
+
 ### 参考资料
 * Redshift stream ingestion https://aws.amazon.com/cn/redshift/redshift-streaming-ingestion/
 * Kinesis data streams https://aws.amazon.com/cn/kinesis/data-streams/?nc1=h_ls
